@@ -98,6 +98,7 @@ GROUP BY `students`.`enrolment_date`
 SELECT `teachers`.`office_address`, COUNT(*)
 FROM `teachers` 
 GROUP BY `teachers`.`office_address`
+HAVING COUNT(*) > 1
 
 /*-------------------------------------------------------*/
 
@@ -110,6 +111,10 @@ GROUP BY `exam_student`.`exam_id`
 /*-------------------------------------------------------*/
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+SELECT `degrees`.`department_id`, COUNT(*)
+FROM `degrees`
+GROUP BY `degrees`.`department_id`
 
 /*-------------------------------------------------------*/
 
@@ -189,3 +194,8 @@ ON `degrees`.`id` = `courses`.`degree_id`
 INNER JOIN `departments`
 ON `departments`.`id` = `degrees`.`department_id`
 WHERE `departments`.`name` = "Dipartimento di Matematica"
+
+/*-------------------------------------------------------*/
+
+7. Selezionare per ogni studente quanti tentativi d esame ha sostenuto per superare 
+   ciascuno dei suoi esami
