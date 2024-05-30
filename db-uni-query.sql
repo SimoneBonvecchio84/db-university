@@ -93,3 +93,23 @@ SELECT `exam_student`.`exam_id`, AVG(`exam_student`.`vote`) AS`media_voto`
 FROM `exam_student`
 GROUP BY `exam_student`.`exam_id`
 
+/*-------------------------------------------------------*/
+
+4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/*-------------------------------------------------------*/
+/*QUERY - JOIN*/
+
+1. Selezionare tutti gli studenti iscritti al corso di Laurea in Economia
+
+SELECT * 
+FROM `students`
+INNER JOIN `degrees`
+ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`name` = "Corso di Laurea in Economia"
+
+/*-------------------------------------------------------*/
+
