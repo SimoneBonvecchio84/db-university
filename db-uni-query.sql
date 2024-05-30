@@ -199,3 +199,11 @@ WHERE `departments`.`name` = "Dipartimento di Matematica"
 
 7. Selezionare per ogni studente quanti tentativi d esame ha sostenuto per superare 
    ciascuno dei suoi esami
+
+SELECT `students`.`name`, `students`.`surname`, `exam_student`.`vote` AS `voti`
+FROM `students`
+INNER JOIN `exam_student`
+ON `students`.`id` = `exam_student`.`student_id`
+INNER JOIN `exams`
+ON `exam_student`.`exam_id` = `exams`.`id`
+WHERE `exam_student`.`vote` < 18;   
