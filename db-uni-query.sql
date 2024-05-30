@@ -78,3 +78,18 @@ LIMIT  5
 SELECT YEAR(`students`. `enrolment_date`) , COUNT(*)
 FROM `students`
 GROUP BY `students`.`enrolment_date`
+
+/*-------------------------------------------------------*/
+
+2. Contare gli insegnanti che hanno l ufficio nello stesso edificio
+SELECT `teachers`.`office_address`, COUNT(*)
+FROM `teachers` 
+GROUP BY `teachers`.`office_address`
+
+/*-------------------------------------------------------*/
+
+3. Calcola La media dei voti di ogni appello d esame
+SELECT `exam_student`.`exam_id`, AVG(`exam_student`.`vote`) AS`media_voto`
+FROM `exam_student`
+GROUP BY `exam_student`.`exam_id`
+
